@@ -1,0 +1,9 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @cargo %>
+
+<div class="btn-group my-5">
+  <%= link_to "Edit this cargo", edit_cargo_path(@cargo), class: "btn btn-sm btn-outline-dark" %>
+  <%= link_to "Back to cargos", cargos_path, class: "btn btn-sm btn-outline-dark" %>
+  <%= button_to "Destroy this cargo", @cargo, method: :delete, class: "btn btn-sm btn-outline-dark" %>
+</div>

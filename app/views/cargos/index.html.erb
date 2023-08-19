@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Cargos</h1>
+
+<% @cargos.each do |cargo| %>
+  <%= render cargo %>
+  <p><%= link_to "Show this cargo", cargo, class: "btn btn-sm btn-outline-dark my-3" %></p>
+<% end %>
+
+<%= link_to "New cargo", new_cargo_path, class: "btn btn-sm btn-outline-dark my-5" %>
