@@ -1,5 +1,5 @@
 class CargosController < ApplicationController
-  before_action :set_cargo, only: %i[ show edit update destroy ]
+  before_action :set_cargo, only: %i[ show edit update update_state destroy ]
 
   def index
     @cargos = Cargo.all
@@ -13,6 +13,10 @@ class CargosController < ApplicationController
   end
 
   def edit
+  end
+
+  def update_state
+    UpdateStateOperation.new(cargo: @cargo, key: params[:state_key])
   end
 
   def create
@@ -51,7 +55,7 @@ class CargosController < ApplicationController
   end
 
   private
-  
+
   def set_cargo
     @cargo = Cargo.find(params[:id])
   end
